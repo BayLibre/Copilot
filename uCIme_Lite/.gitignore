@@ -1,0 +1,10 @@
+Assembly_Files/
+*-backups/
+PCB_Production_Files/
+*auto_saved_files#
+*.bak
+*-bak
+*.csv
+*.kicad_prl
+*.xml
+fp-info-cache
