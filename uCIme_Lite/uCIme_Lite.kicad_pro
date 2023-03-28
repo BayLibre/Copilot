@@ -324,6 +324,10 @@
     [
       "b72074d7-db6e-4ce2-896d-216adccf1d19",
       "Power Management"
+    ],
+    [
+      "85cb8885-4077-4bc3-b1fe-5b247ce2fc7e",
+      "Controller"
     ]
   ],
   "text_variables": {}
