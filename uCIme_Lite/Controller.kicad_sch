@@ -1987,7 +1987,7 @@
   (symbol (lib_id "Device:C") (at 152.4 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 031b4d92-26f8-4cc2-8b09-fe48b8e8cd55)
-    (property "Reference" "C?" (at 155.575 161.2899 0)
+    (property "Reference" "C13" (at 155.575 161.2899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2u" (at 155.575 163.8299 0)
@@ -2013,7 +2013,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -2047,7 +2047,7 @@
   (symbol (lib_id "Logic_LevelTranslator:TXB0104D") (at 193.04 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 05d5e719-1fb3-40e3-8611-f51246e33628)
-    (property "Reference" "U?" (at 195.0594 100.33 0)
+    (property "Reference" "U6" (at 195.0594 100.33 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TXB0104D" (at 195.0594 102.87 0)
@@ -2057,6 +2057,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/txb0104.pdf" (at 195.834 80.137 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "PartNumber" "TXB0104DR" (at 193.04 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 6a39dbc5-3e78-4b88-a22c-b1b33f097ad1))
@@ -2076,7 +2079,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "U?") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -2110,7 +2113,7 @@
   (symbol (lib_id "Device:R") (at 62.23 175.26 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0b922c32-84b5-497a-8641-26f46d53a461)
-    (property "Reference" "R?" (at 64.77 172.7199 0)
+    (property "Reference" "R14" (at 64.77 172.7199 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "22K" (at 64.77 175.2599 0)
@@ -2130,7 +2133,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -2214,7 +2217,7 @@
   (symbol (lib_id "Device:C") (at 208.28 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 19a7b6fb-fb83-4728-af55-95351559560c)
-    (property "Reference" "C?" (at 212.09 53.3399 0)
+    (property "Reference" "C15" (at 212.09 53.3399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 212.09 55.8799 0)
@@ -2237,7 +2240,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
@@ -2271,7 +2274,7 @@
   (symbol (lib_id "Transistor_FET:BSS138") (at 63.5 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 213f45ef-8bf3-4d42-8d24-b4096fcadc5d)
-    (property "Reference" "Q?" (at 69.85 41.9099 0)
+    (property "Reference" "Q6" (at 69.85 41.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "BSS138" (at 69.85 44.4499 0)
@@ -2292,7 +2295,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "Q?") (unit 1)
+          (reference "Q6") (unit 1)
         )
       )
     )
@@ -2301,7 +2304,7 @@
   (symbol (lib_id "Device:C") (at 74.93 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23f681a0-caf4-499b-92aa-9ae86b152d04)
-    (property "Reference" "C?" (at 78.105 161.2899 0)
+    (property "Reference" "C8" (at 78.105 161.2899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2u" (at 78.105 163.8299 0)
@@ -2327,7 +2330,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -2386,7 +2389,7 @@
   (symbol (lib_id "Device:R") (at 139.7 165.1 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 387d8c08-3207-43b1-8ea7-6d8bec988ee5)
-    (property "Reference" "R?" (at 142.24 162.5599 0)
+    (property "Reference" "R18" (at 142.24 162.5599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10K" (at 142.24 165.0999 0)
@@ -2406,7 +2409,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
     )
@@ -2415,7 +2418,7 @@
   (symbol (lib_id "Device:C") (at 60.96 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3d260933-584c-4394-a2fe-e238bcf05d7e)
-    (property "Reference" "C?" (at 64.77 109.2199 0)
+    (property "Reference" "C7" (at 64.77 109.2199 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "47p" (at 64.77 111.7599 0)
@@ -2438,7 +2441,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -2447,7 +2450,7 @@
   (symbol (lib_id "Device:C") (at 104.14 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 403a9513-4862-4760-8dfe-678191d10429)
-    (property "Reference" "C?" (at 100.33 67.3099 0)
+    (property "Reference" "C9" (at 100.33 67.3099 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "4.7u" (at 100.33 69.8499 0)
@@ -2470,7 +2473,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -2504,7 +2507,7 @@
   (symbol (lib_id "Device:R") (at 82.55 34.29 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 49b60b0f-25a0-4f68-8e28-60090960170b)
-    (property "Reference" "R?" (at 82.55 25.4 90)
+    (property "Reference" "R17" (at 82.55 25.4 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "240" (at 82.55 27.94 90)
@@ -2519,15 +2522,15 @@
     (property "PartNumber" "" (at 82.55 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 82.55 30.48 90)
-      (effects (font (size 1.27 1.27)))
+    (property "Value2" "5%" (at 82.55 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 322210a5-d0b2-4453-88dc-92ad670a81d9))
     (pin "2" (uuid 38a38368-132c-4e88-afa7-25d4463750de))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R17") (unit 1)
         )
       )
     )
@@ -2536,7 +2539,7 @@
   (symbol (lib_id "Transistor_FET:BSS138") (at 229.87 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4aff495e-5dd9-448b-86d6-3ae8dac5df2d)
-    (property "Reference" "Q?" (at 236.22 143.5099 0)
+    (property "Reference" "Q7" (at 236.22 143.5099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "BSS138" (at 236.22 146.0499 0)
@@ -2557,7 +2560,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "Q?") (unit 1)
+          (reference "Q7") (unit 1)
         )
       )
     )
@@ -2691,7 +2694,7 @@
   (symbol (lib_id "Device:C") (at 177.8 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5d58d868-7c00-419a-a29c-d66728e5c611)
-    (property "Reference" "C?" (at 173.99 53.3399 0)
+    (property "Reference" "C14" (at 173.99 53.3399 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "100n" (at 173.99 55.8799 0)
@@ -2714,7 +2717,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -2723,7 +2726,7 @@
   (symbol (lib_id "Device:R") (at 139.7 175.26 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 612384df-c24f-4193-b683-98780337f737)
-    (property "Reference" "R?" (at 142.24 172.7199 0)
+    (property "Reference" "R19" (at 142.24 172.7199 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "6K" (at 142.24 175.2599 0)
@@ -2743,7 +2746,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
     )
@@ -2777,7 +2780,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 153.67 36.83 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 66e9aec5-b7fa-4fb3-b894-9090db5888a3)
-    (property "Reference" "J?" (at 158.75 35.5599 90)
+    (property "Reference" "J11" (at 158.75 35.5599 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "SERIAL_MODE" (at 158.75 38.0999 90)
@@ -2795,7 +2798,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "J?") (unit 1)
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -2904,7 +2907,7 @@
   (symbol (lib_id "Regulator_Linear:AP2204K-ADJ") (at 123.19 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6a9e6c12-42dd-400b-b7c6-4cf15d1afb07)
-    (property "Reference" "U?" (at 123.19 152.4 0)
+    (property "Reference" "U4" (at 123.19 152.4 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AP2204K-ADJ" (at 123.19 154.94 0)
@@ -2916,6 +2919,9 @@
     (property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP2204.pdf" (at 123.19 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "PartNumber" "AP2204K-ADJTRG1" (at 123.19 162.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid f33ae5b9-680a-4081-bfb7-a4ec36f842de))
     (pin "2" (uuid 62cd11a2-236a-41fa-a0bd-b76bd61ddb18))
     (pin "3" (uuid ecae9040-45ff-4fd3-8659-0852f77ccef4))
@@ -2924,7 +2930,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "U?") (unit 1)
+          (reference "U4") (unit 1)
         )
       )
     )
@@ -2933,7 +2939,7 @@
   (symbol (lib_id "Device:R") (at 77.47 104.14 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6cd5bb08-57a6-4631-bf4c-4ee237af8622)
-    (property "Reference" "R?" (at 77.47 107.95 90)
+    (property "Reference" "R16" (at 77.47 107.95 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "27" (at 77.47 110.49 90)
@@ -2948,12 +2954,15 @@
     (property "Value2" "1%" (at 77.47 113.03 90)
       (effects (font (size 1.27 1.27)))
     )
+    (property "PartNumber" "RC0603FR-1327RL" (at 77.47 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 6dc04fdc-b73f-4681-8b21-8af78ba94247))
     (pin "2" (uuid 594ed1ea-78c6-4fd2-bfb1-d45c7e02823a))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R16") (unit 1)
         )
       )
     )
@@ -2987,7 +2996,7 @@
   (symbol (lib_id "Device:C") (at 140.97 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7c863e72-533d-4e9d-9670-1e6cd854b912)
-    (property "Reference" "C?" (at 144.78 67.3099 0)
+    (property "Reference" "C12" (at 144.78 67.3099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 144.78 69.8499 0)
@@ -3010,7 +3019,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -3069,7 +3078,7 @@
   (symbol (lib_id "Device:R") (at 40.64 54.61 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 83864bd1-4301-421d-84dc-5631e458bd38)
-    (property "Reference" "R?" (at 38.1 52.0699 0)
+    (property "Reference" "R11" (at 38.1 52.0699 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100K" (at 38.1 54.6099 0)
@@ -3084,15 +3093,15 @@
     (property "PartNumber" "" (at 40.64 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 38.1 57.1499 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+    (property "Value2" "5%" (at 40.64 54.61 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 47a9ce9c-b3fa-4ab7-a727-05dbfa8b3421))
     (pin "2" (uuid ab183ab6-8f41-4646-8597-0bd5c088fefc))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -3101,7 +3110,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x03_Odd_Even") (at 232.41 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 853e2330-b082-456b-8148-53d79ebe74be)
-    (property "Reference" "J?" (at 233.68 43.18 0)
+    (property "Reference" "J12" (at 233.68 43.18 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SERIAL_VOLTAGE_SELECT" (at 233.68 45.72 0)
@@ -3122,7 +3131,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "J?") (unit 1)
+          (reference "J12") (unit 1)
         )
       )
     )
@@ -3231,7 +3240,7 @@
   (symbol (lib_id "Device:R") (at 49.53 38.1 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 97be220b-4725-4448-89ea-f45a0ad96c6c)
-    (property "Reference" "R?" (at 52.07 35.5599 0)
+    (property "Reference" "R12" (at 52.07 35.5599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10K" (at 52.07 38.0999 0)
@@ -3246,15 +3255,15 @@
     (property "PartNumber" "" (at 49.53 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 52.07 40.6399 0)
-      (effects (font (size 1.27 1.27)) (justify right))
+    (property "Value2" "5%" (at 49.53 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 73737c65-e3f2-43ae-ba4e-a016b24655cb))
     (pin "2" (uuid 8d978d5e-a61f-414e-b8ec-3099d02c1922))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -3288,7 +3297,7 @@
   (symbol (lib_id "Device:C") (at 53.34 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a34f9709-1972-4b8a-ae4c-fc3e822cedcb)
-    (property "Reference" "C?" (at 49.53 109.2199 0)
+    (property "Reference" "C6" (at 49.53 109.2199 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "47p" (at 49.53 111.7599 0)
@@ -3311,7 +3320,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -3395,7 +3404,7 @@
   (symbol (lib_id "Regulator_Linear:AP2204K-ADJ") (at 45.72 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c47814bb-1e91-4d16-a053-2e42132b380e)
-    (property "Reference" "U?" (at 45.72 152.4 0)
+    (property "Reference" "U3" (at 45.72 152.4 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AP2204K-ADJ" (at 45.72 154.94 0)
@@ -3407,6 +3416,9 @@
     (property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP2204.pdf" (at 45.72 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "PartNumber" "AP2204K-ADJTRG1" (at 45.72 162.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 69ffced8-e7cd-4fd2-adbf-a8e71c542d76))
     (pin "2" (uuid b1ab62af-334f-469d-b6d0-e868bbf8cc66))
     (pin "3" (uuid ce523f77-5ec6-45a4-bfeb-fa7ccf9b6179))
@@ -3415,7 +3427,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "U?") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -3424,7 +3436,7 @@
   (symbol (lib_id "Transistor_FET:BSS138") (at 246.38 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c93457fa-1088-462b-b4a6-befe0b05701f)
-    (property "Reference" "Q?" (at 252.73 137.1599 0)
+    (property "Reference" "Q8" (at 252.73 137.1599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "BSS138" (at 252.73 139.6999 0)
@@ -3445,7 +3457,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "Q?") (unit 1)
+          (reference "Q8") (unit 1)
         )
       )
     )
@@ -3454,7 +3466,7 @@
   (symbol (lib_id "Device:R") (at 77.47 101.6 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c9ee1f89-56f4-45f3-b807-d9f81c2c205d)
-    (property "Reference" "R?" (at 77.47 92.71 90)
+    (property "Reference" "R15" (at 77.47 92.71 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "27" (at 77.47 95.25 90)
@@ -3469,12 +3481,15 @@
     (property "Value2" "1%" (at 77.47 97.79 90)
       (effects (font (size 1.27 1.27)))
     )
+    (property "PartNumber" "RC0603FR-1327RL" (at 77.47 101.6 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid cf38b0e8-0649-440a-8d1c-a7cb3b84b4fd))
     (pin "2" (uuid ba0e6561-68e0-428f-9e86-f735dabee211))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -3483,7 +3498,7 @@
   (symbol (lib_id "Device:LED") (at 256.54 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cded9413-721d-42f8-871b-39d69b33a219)
-    (property "Reference" "D?" (at 254.9525 123.19 0)
+    (property "Reference" "D5" (at 254.9525 123.19 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "UART_TX" (at 254.9525 125.73 0)
@@ -3500,7 +3515,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "D?") (unit 1)
+          (reference "D5") (unit 1)
         )
       )
     )
@@ -3509,7 +3524,7 @@
   (symbol (lib_id "Device:LED") (at 73.66 34.29 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ce98c3fb-7e54-4296-9b20-4a23c48bfe27)
-    (property "Reference" "D?" (at 72.0725 27.94 0)
+    (property "Reference" "D4" (at 72.0725 27.94 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "UART_RX" (at 72.0725 30.48 0)
@@ -3526,7 +3541,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "D?") (unit 1)
+          (reference "D4") (unit 1)
         )
       )
     )
@@ -3560,7 +3575,7 @@
   (symbol (lib_id "Transistor_FET:BSS138") (at 46.99 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d3429e42-3213-4ff5-9e07-616035c90e55)
-    (property "Reference" "Q?" (at 53.34 48.2599 0)
+    (property "Reference" "Q5" (at 53.34 48.2599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "BSS138" (at 53.34 50.7999 0)
@@ -3581,7 +3596,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "Q?") (unit 1)
+          (reference "Q5") (unit 1)
         )
       )
     )
@@ -3615,7 +3630,7 @@
   (symbol (lib_id "Device:C") (at 116.84 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e052f0bf-4da4-4af8-98b6-9e46c5fc21fe)
-    (property "Reference" "C?" (at 113.03 67.3099 0)
+    (property "Reference" "C11" (at 113.03 67.3099 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "100n" (at 113.03 69.8499 0)
@@ -3638,7 +3653,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
     )
@@ -3647,7 +3662,7 @@
   (symbol (lib_id "Device:R") (at 232.41 133.35 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e49f6d5d-3b05-4519-b2e1-8d4e5fd8aed5)
-    (property "Reference" "R?" (at 234.95 130.8099 0)
+    (property "Reference" "R21" (at 234.95 130.8099 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10K" (at 234.95 133.3499 0)
@@ -3662,15 +3677,15 @@
     (property "PartNumber" "" (at 232.41 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 234.95 135.8899 0)
-      (effects (font (size 1.27 1.27)) (justify right))
+    (property "Value2" "5%" (at 232.41 133.35 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 8c8ac587-450a-4a5b-be30-9bd75028da3f))
     (pin "2" (uuid 146e6d9a-94a6-4c78-a65f-ad98a8f40703))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
     )
@@ -3679,7 +3694,7 @@
   (symbol (lib_id "Device:R") (at 223.52 149.86 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e82f65a0-0db5-43b6-b1dd-018d513bf908)
-    (property "Reference" "R?" (at 220.98 147.3199 0)
+    (property "Reference" "R20" (at 220.98 147.3199 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100K" (at 220.98 149.8599 0)
@@ -3694,15 +3709,15 @@
     (property "PartNumber" "" (at 223.52 149.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 220.98 152.3999 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+    (property "Value2" "5%" (at 223.52 149.86 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 3e616131-61b8-4c11-9115-4c9547b49199))
     (pin "2" (uuid 040fe9d4-3fc8-4bb4-921c-afd623b05346))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -3761,7 +3776,7 @@
   (symbol (lib_id "Interface_USB:FT230XS") (at 125.73 104.14 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ef366731-28ce-4a76-8afc-b1631588bc18)
-    (property "Reference" "U?" (at 130.2894 85.09 0)
+    (property "Reference" "U5" (at 130.2894 85.09 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "FT230XS" (at 130.2894 87.63 0)
@@ -3771,6 +3786,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT230X.pdf" (at 125.73 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "PartNumber" "FT230XS-R" (at 125.73 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid acefc3fe-9f33-4333-926f-6b3cdd4c49a7))
@@ -3792,7 +3810,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "U?") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -3801,7 +3819,7 @@
   (symbol (lib_id "Device:C") (at 26.67 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f000b3e3-8e3d-480a-b4f5-7419f740aaef)
-    (property "Reference" "C?" (at 29.845 161.2899 0)
+    (property "Reference" "C5" (at 29.845 161.2899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 29.845 163.8299 0)
@@ -3827,7 +3845,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -3836,7 +3854,7 @@
   (symbol (lib_id "Device:C") (at 104.14 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f283731f-facb-49fa-beb7-933e891cecf4)
-    (property "Reference" "C?" (at 107.315 161.2899 0)
+    (property "Reference" "C10" (at 107.315 161.2899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1u" (at 107.315 163.8299 0)
@@ -3862,7 +3880,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "C?") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
     )
@@ -3896,7 +3914,7 @@
   (symbol (lib_id "Device:R") (at 62.23 165.1 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fb48803c-800b-475d-b7e9-d3a267fee279)
-    (property "Reference" "R?" (at 64.77 162.5599 0)
+    (property "Reference" "R13" (at 64.77 162.5599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10K" (at 64.77 165.0999 0)
@@ -3916,7 +3934,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -3950,7 +3968,7 @@
   (symbol (lib_id "Device:R") (at 265.43 129.54 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fd7c6ecf-f9bf-42d3-9892-379790d2aac1)
-    (property "Reference" "R?" (at 265.43 120.65 90)
+    (property "Reference" "R22" (at 265.43 120.65 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "240" (at 265.43 123.19 90)
@@ -3965,15 +3983,15 @@
     (property "PartNumber" "" (at 265.43 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 265.43 125.73 90)
-      (effects (font (size 1.27 1.27)))
+    (property "Value2" "5%" (at 265.43 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid b721812a-dd04-4822-8b2e-5c73cea1e882))
     (pin "2" (uuid 51986cb6-767f-44b9-a983-577ce800252a))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56/85cb8885-4077-4bc3-b1fe-5b247ce2fc7e"
-          (reference "R?") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
     )

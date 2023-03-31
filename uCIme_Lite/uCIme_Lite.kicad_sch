@@ -1114,11 +1114,6 @@
     (uuid ff1f30ec-654c-414e-bc10-91b2dad20f56)
   )
 
-  (text "TODO\nempreinte bornier jack\nleds\nheader GPIOs + Vcc et GND, peut être monté droit ou coudé\nbouton reset FTDI"
-    (at -101.6 95.25 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 23453b99-cb6b-4e3d-b352-e7d9714ae373)
-  )
   (text "A 5.1K resistor on CC pins tells the\nUSB controller that our board is a\nUSB 2.0 full speed device."
     (at 106.68 175.26 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1291,7 +1286,7 @@
   (symbol (lib_id "Device:LED") (at 154.94 153.67 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 00595cf1-fd6c-46ee-920b-e961271cd227)
-    (property "Reference" "D?" (at 158.75 153.9874 90)
+    (property "Reference" "D2" (at 158.75 153.9874 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "PC_USB" (at 158.75 156.5274 90)
@@ -1308,7 +1303,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "D?") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -1317,7 +1312,7 @@
   (symbol (lib_id "PJ-082BH:JACK-C-PC-10A-RA(R)") (at 229.87 26.67 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 03e02d60-ba51-4f77-a312-8d67a4adcc67)
-    (property "Reference" "J?" (at 236.22 25.7555 0)
+    (property "Reference" "J8" (at 236.22 25.7555 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "JACK-C-PC-10A-RA(R)" (at 236.22 28.2955 0)
@@ -1338,7 +1333,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -1347,7 +1342,7 @@
   (symbol (lib_id "Device:R") (at 95.25 171.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 064d6100-ad70-4959-817b-c4dad9e65edf)
-    (property "Reference" "R?" (at 97.79 168.9099 0)
+    (property "Reference" "R3" (at 97.79 168.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5.1K" (at 97.79 171.4499 0)
@@ -1367,7 +1362,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "R?") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -1501,7 +1496,7 @@
   (symbol (lib_id "PJ-082BH:JACK-C-PC-10A-RA(R)") (at 62.23 26.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3071b057-73f1-47ad-9445-a53f1a251bbe)
-    (property "Reference" "J?" (at 62.23 17.78 0)
+    (property "Reference" "J2" (at 62.23 17.78 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "JACK-C-PC-10A-RA(R)" (at 62.23 20.32 0)
@@ -1522,7 +1517,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -1531,7 +1526,7 @@
   (symbol (lib_id "USB4081:USB4081-03-A") (at 62.23 86.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3b2aa2f7-1d96-498b-809f-014a5037d783)
-    (property "Reference" "J?" (at 71.7297 60.96 0)
+    (property "Reference" "J3" (at 71.7297 60.96 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "USB4081-03-A" (at 71.7297 63.5 0)
@@ -1579,7 +1574,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J3") (unit 1)
         )
       )
     )
@@ -1613,7 +1608,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 186.69 130.81 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 40a6169d-1bc6-4f95-830a-91dc8fb018b9)
-    (property "Reference" "J?" (at 189.23 129.5399 90)
+    (property "Reference" "J6" (at 189.23 129.5399 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5V_ENABLE" (at 189.23 132.0799 90)
@@ -1630,7 +1625,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -1664,7 +1659,7 @@
   (symbol (lib_id "Device:R") (at 154.94 144.78 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5feff8ad-b588-452b-b2cd-506cadfa8623)
-    (property "Reference" "R?" (at 157.48 142.2399 0)
+    (property "Reference" "R4" (at 157.48 142.2399 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "240" (at 157.48 144.7799 0)
@@ -1679,15 +1674,15 @@
     (property "PartNumber" "" (at 154.94 144.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value1" "5%" (at 157.48 147.3199 0)
-      (effects (font (size 1.27 1.27)) (justify right))
+    (property "Value2" "5%" (at 154.94 144.78 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 52d258ca-3b49-481b-b6db-4f319fd1c7b4))
     (pin "2" (uuid 550fea1b-2a40-4ef0-bd23-8f944e822566))
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "R?") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -1746,7 +1741,7 @@
   (symbol (lib_id "USB4081:USB4081-03-A") (at 62.23 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7bff95de-fb41-40f9-abdc-14e6969cec98)
-    (property "Reference" "J?" (at 71.7297 138.43 0)
+    (property "Reference" "J4" (at 71.7297 138.43 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "USB4081-03-A" (at 71.7297 140.97 0)
@@ -1794,7 +1789,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -1803,7 +1798,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x06") (at 198.12 107.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9cb5cc9c-7469-4819-9443-5dde29a3bced)
-    (property "Reference" "J?" (at 200.66 107.9499 0)
+    (property "Reference" "J7" (at 200.66 107.9499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SERIAL" (at 200.66 110.4899 0)
@@ -1824,7 +1819,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -1858,7 +1853,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x06") (at 130.81 69.85 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ae5ae539-971e-4b31-b72e-6d0091d8aec7)
-    (property "Reference" "J?" (at 128.27 67.3099 0)
+    (property "Reference" "J5" (at 128.27 67.3099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "GPIO" (at 128.27 69.8499 0)
@@ -1879,7 +1874,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
@@ -1888,7 +1883,7 @@
   (symbol (lib_id "USB4081:USB4081-03-A") (at 229.87 86.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b37cb99a-3fd0-4c16-93ce-d59d751e6396)
-    (property "Reference" "J?" (at 239.3697 60.96 0)
+    (property "Reference" "J9" (at 239.3697 60.96 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "USB4081-03-A" (at 239.3697 63.5 0)
@@ -1936,7 +1931,7 @@
     (instances
       (project "uCIme_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
-          (reference "J?") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
