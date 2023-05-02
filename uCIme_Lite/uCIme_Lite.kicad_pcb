@@ -1894,7 +1894,7 @@
         (effects (font (size 0.8 0.8) (thickness 0.15)))
       (tstamp 436bac41-9ae2-4c08-9cfa-77d6e7236804)
     )
-    (fp_text value "UART_TX" (at 0 1.65 90) (layer "F.Fab") hide
+    (fp_text value "UART_RX" (at 0 1.65 90) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp a99dc56d-078b-462e-839a-cc11a862e68c)
     )
@@ -4318,7 +4318,7 @@
         (effects (font (size 0.8 0.8) (thickness 0.15)))
       (tstamp 225bfda8-d224-47e4-9aa2-f0e471d2fb79)
     )
-    (fp_text value "UART_RX" (at 0 1.65 90) (layer "F.Fab") hide
+    (fp_text value "UART_TX" (at 0 1.65 90) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 7888aa43-49ef-4d27-8d16-c50a65634174)
     )
