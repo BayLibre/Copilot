@@ -1938,7 +1938,7 @@
     (uuid fb85dbb3-a77c-44e4-8204-6c9ed53701d7)
   )
 
-  (label "UART_RX" (at 30.48 49.53 0) (fields_autoplaced)
+  (label "UART_TX" (at 30.48 49.53 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 76f4c567-db4a-456f-b398-8e0d0bf60376)
   )
@@ -1946,7 +1946,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid cadacfb0-1e44-400b-9bb6-ad3ebbb175f5)
   )
-  (label "UART_TX" (at 213.36 144.78 0) (fields_autoplaced)
+  (label "UART_RX" (at 213.36 144.78 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f5452fdd-768c-4ae1-863c-a4ce1e7031c8)
   )
