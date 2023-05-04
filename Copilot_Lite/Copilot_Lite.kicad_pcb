@@ -5342,10 +5342,38 @@
     (stroke (width 0.15) (type solid)) (fill solid) (layer "B.SilkS") (tstamp cac3ae98-e66b-4a15-b9c7-f1ce5fae153f))
   (gr_line (start 104 102.6) (end 104 100.2)
     (stroke (width 0.4) (type default)) (layer "B.SilkS") (tstamp d347bc75-0e72-495f-83e4-67124efd1280))
+  (gr_poly
+    (pts
+      (xy 76.5 68.5)
+      (xy 78 69.5)
+      (xy 76.5 70.5)
+    )
+
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 1467e28d-1efc-4855-b811-c34fdb3ccc77))
   (gr_line (start 122.4 63.6) (end 128.4 63.6)
     (stroke (width 0.3) (type default)) (layer "F.SilkS") (tstamp 3fa649d5-b5a2-4521-a103-ea67ac808057))
+  (gr_poly
+    (pts
+      (xy 81.5 79.5)
+      (xy 83 80.5)
+      (xy 81.5 81.5)
+    )
+
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 60141cf5-5270-45fe-aea6-2d39c457e866))
+  (gr_poly
+    (pts
+      (xy 120 68.538462)
+      (xy 121.5 69.538462)
+      (xy 120 70.538462)
+    )
+
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 7e4082bc-d38e-4695-a54b-1a9b910d6004))
   (gr_line (start 119.7 60.9) (end 122.4 63.6)
     (stroke (width 0.3) (type default)) (layer "F.SilkS") (tstamp 8f7e2a33-5408-40e9-9d94-08c8a57836b5))
+  (gr_rect (start 73.5 69) (end 76.5 70)
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 911b2929-b0e4-4916-9b0e-92058d07b8fd))
+  (gr_rect (start 117 69.038462) (end 120 70.038462)
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 9c8411ae-ace6-4a87-8437-30872adf7495))
   (gr_poly
     (pts
       (xy 129.798043 63.587574)
@@ -5354,6 +5382,18 @@
     )
 
     (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 9f6c2753-8795-44e3-a0a7-8561cd7739c3))
+  (gr_rect (start 78.5 80) (end 81.5 81)
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp a253a9d3-de23-4cad-83c1-3dcd662d5f16))
+  (gr_poly
+    (pts
+      (xy 115 79.5)
+      (xy 116.5 80.5)
+      (xy 115 81.5)
+    )
+
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp fadde05a-c3a0-4052-bc5d-d6a6e26e97a7))
+  (gr_rect (start 112 80) (end 115 81)
+    (stroke (width 0.15) (type solid)) (fill solid) (layer "F.SilkS") (tstamp fe84750a-41a5-45b9-91f1-1c8be9ca8f72))
   (gr_arc (start 130 110) (mid 129.12132 112.12132) (end 127 113)
     (stroke (width 0.1) (type default)) (layer "Edge.Cuts") (tstamp 0b092310-f5b2-40aa-a401-40de8ee0c127))
   (gr_line (start 65 110) (end 65 60)
@@ -5487,22 +5527,10 @@
   (gr_text "See documentation on\nbottom side" (at 113.7 60.8) (layer "F.SilkS" knockout) (tstamp 0786e992-5f11-4b84-9114-d6f731d822f0)
     (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
   )
-  (gr_text "To board" (at 112.8 80.2) (layer "F.SilkS" knockout) (tstamp 2dc47ebc-ca01-45bb-89e4-bc9f7ea3bce8)
-    (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
-  )
-  (gr_text "To board" (at 117.7 70.2) (layer "F.SilkS" knockout) (tstamp 829eb112-8ad7-416a-a178-38ce163d49da)
-    (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
-  )
-  (gr_text "Max power per canal:\n240W (48V@5A)" (at 98.6 72.2) (layer "F.SilkS" knockout) (tstamp a0fa2f8d-8c2d-4b03-90ed-3a26aea9fd20)
-    (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
-  )
-  (gr_text "From power\nsupply" (at 83.2 81) (layer "F.SilkS" knockout) (tstamp ba38513c-53e5-4954-882b-cf01e9aa816a)
+  (gr_text "Max power: 240W (48V@5A)" (at 98.6 72.2) (layer "F.SilkS" knockout) (tstamp a0fa2f8d-8c2d-4b03-90ed-3a26aea9fd20)
     (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
   )
   (gr_text "PC" (at 76.6 99.3) (layer "F.SilkS" knockout) (tstamp c78c9cf8-a0c2-4bf1-8b83-d006584a6c21)
-    (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
-  )
-  (gr_text "From power\nsupply" (at 78.3 70.9) (layer "F.SilkS" knockout) (tstamp e57c84f8-b577-4393-8ac8-f5f230e19100)
     (effects (font (size 1 1) (thickness 0.15)) (justify bottom))
   )
 
