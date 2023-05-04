@@ -5,7 +5,7 @@
   (paper "A4")
 
   (title_block
-    (title "uCIme Lite main page")
+    (title "Copilot Lite main page")
     (date "2023-03-27")
     (company "(C) BayLibre")
   )
@@ -1402,7 +1402,7 @@
     (pin "1" (uuid 481dc584-6280-42b6-a35c-e5fd34252154))
     (pin "2" (uuid 6b5eea90-9d3e-4db2-90fb-7c825a4c9088))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "D2") (unit 1)
         )
@@ -1438,7 +1438,7 @@
     (pin "S3" (uuid e7dfec37-0ac8-4752-99b8-4e347d80c9c0))
     (pin "S4" (uuid 02dec859-d841-47f4-884c-5671d909302f))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J8") (unit 1)
         )
@@ -1473,7 +1473,7 @@
     (pin "1" (uuid b9a23fd9-eaae-4791-aaca-62e931e6aa8e))
     (pin "2" (uuid f1d5dd45-8082-49a9-87bd-7f512ff25043))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "R3") (unit 1)
         )
@@ -1498,7 +1498,7 @@
     )
     (pin "1" (uuid 5ee0d6a3-09f2-4123-939e-043caf5d72d4))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0104") (unit 1)
         )
@@ -1522,7 +1522,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "H1") (unit 1)
         )
@@ -1547,7 +1547,7 @@
     )
     (pin "1" (uuid da69adf8-db7e-4c78-be93-72338a4f947d))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0105") (unit 1)
         )
@@ -1572,7 +1572,7 @@
     )
     (pin "1" (uuid fa57bc43-8bb8-4554-ac8b-948c817cfea5))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0108") (unit 1)
         )
@@ -1596,7 +1596,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "H3") (unit 1)
         )
@@ -1621,7 +1621,7 @@
     )
     (pin "1" (uuid d7d98186-ea6d-4cd4-bcd8-8866cfde2f4a))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR07") (unit 1)
         )
@@ -1646,7 +1646,7 @@
     )
     (pin "1" (uuid 3bf00d76-d5b8-4ed1-8f6d-eae1b6b4cf5b))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0101") (unit 1)
         )
@@ -1682,7 +1682,7 @@
     (pin "S3" (uuid ee9ce070-a7ac-4082-801c-200e58713308))
     (pin "S4" (uuid 2c73388d-b08b-443d-8f18-4045a55dde32))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J2") (unit 1)
         )
@@ -1742,7 +1742,7 @@
     (pin "A4" (uuid 624dce53-e1ae-4a52-9934-c58c155a2a5e))
     (pin "A9" (uuid 6ed0a7a7-9d7b-4fce-a4a8-3c1464eb41a3))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J3") (unit 1)
         )
@@ -1767,7 +1767,7 @@
     )
     (pin "1" (uuid 3e5090c6-cdf8-47a6-a3c3-56dc3a5dfff4))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0103") (unit 1)
         )
@@ -1793,7 +1793,7 @@
     (pin "1" (uuid da702d26-9a14-48cf-8612-bc5b0cb9a214))
     (pin "2" (uuid 7fd5b259-3d39-4515-8fe3-d334f763db00))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J6") (unit 1)
         )
@@ -1818,7 +1818,7 @@
     )
     (pin "1" (uuid adbec2e1-6cb6-41be-8f66-a8d092659c73))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0112") (unit 1)
         )
@@ -1853,7 +1853,7 @@
     (pin "1" (uuid 52d258ca-3b49-481b-b6db-4f319fd1c7b4))
     (pin "2" (uuid 550fea1b-2a40-4ef0-bd23-8f944e822566))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "R4") (unit 1)
         )
@@ -1878,7 +1878,7 @@
     )
     (pin "1" (uuid 2584d484-d83c-48de-9b74-5fb1c7d62142))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0113") (unit 1)
         )
@@ -1903,7 +1903,7 @@
     )
     (pin "1" (uuid 59c0fd89-2e89-4dba-8beb-43ea693d6b9b))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR06") (unit 1)
         )
@@ -1963,7 +1963,7 @@
     (pin "A4" (uuid 5372db4f-4e98-4aef-91a6-8f5b704a9f20))
     (pin "A9" (uuid ea71949b-9516-4007-8687-f69575e0274c))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J4") (unit 1)
         )
@@ -1987,7 +1987,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "H4") (unit 1)
         )
@@ -2011,7 +2011,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "H2") (unit 1)
         )
@@ -2047,7 +2047,7 @@
     (pin "8" (uuid 70f7f82e-b103-4d85-98d6-f82bdbbea352))
     (pin "9" (uuid 23617eb1-e3e5-4d23-bb5f-f14da79d1008))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J7") (unit 1)
         )
@@ -2072,7 +2072,7 @@
     )
     (pin "1" (uuid 4ca4077d-98b9-4f7c-9a31-daddcbd768c1))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0110") (unit 1)
         )
@@ -2132,7 +2132,7 @@
     (pin "A4" (uuid 50d780d5-1af9-428a-86c6-bc963512116d))
     (pin "A9" (uuid 6ad52de1-38ad-4142-b0af-31df7897602c))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "J9") (unit 1)
         )
@@ -2157,7 +2157,7 @@
     )
     (pin "1" (uuid 7f0decfe-6bb1-4996-8b47-e2e916cb8162))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0102") (unit 1)
         )
@@ -2182,7 +2182,7 @@
     )
     (pin "1" (uuid 37b3f2eb-20a9-4f4d-89ea-8f70db73db9f))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0109") (unit 1)
         )
@@ -2207,7 +2207,7 @@
     )
     (pin "1" (uuid 53cb3e10-d5fb-4c61-8dc8-960bf207da6c))
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56"
           (reference "#PWR0111") (unit 1)
         )
@@ -2266,7 +2266,7 @@
       (uuid 29ee53d7-d842-4bb5-a067-4f36ec6d139a)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56" (page "3"))
       )
     )
@@ -2303,7 +2303,7 @@
       (uuid 405926ee-2a6f-40d4-a3c4-b08b1e261080)
     )
     (instances
-      (project "uCIme_Lite"
+      (project "Copilot_Lite"
         (path "/6d46d15a-8cd0-4983-b142-8248cafa0b56" (page "2"))
       )
     )
