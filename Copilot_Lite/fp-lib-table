@@ -1,4 +1,6 @@
 (fp_lib_table
+  (version 7)
   (lib (name "PJ-082BH")(type "KiCad")(uri "${KIPRJMOD}/PJ-082BH.pretty")(options "")(descr ""))
   (lib (name "USB4081")(type "KiCad")(uri "${KIPRJMOD}/USB4081.pretty")(options "")(descr ""))
+  (lib (name "Logo_BayLibre")(type "KiCad")(uri "${KIPRJMOD}/Logo_BayLibre.pretty")(options "")(descr ""))
 )
