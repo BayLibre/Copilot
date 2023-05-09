@@ -1,5 +1,7 @@
 (sym_lib_table
+  (version 7)
   (lib (name "LM74502")(type "KiCad")(uri "${KIPRJMOD}/LM74502.kicad_sym")(options "")(descr ""))
   (lib (name "PJ-082BH")(type "KiCad")(uri "${KIPRJMOD}/PJ-082BH.kicad_sym")(options "")(descr ""))
   (lib (name "USB4081")(type "KiCad")(uri "${KIPRJMOD}/USB4081.kicad_sym")(options "")(descr ""))
+  (lib (name "SN74LV1T125")(type "KiCad")(uri "${KIPRJMOD}/SN74LV1T125.kicad_sym")(options "")(descr ""))
 )
