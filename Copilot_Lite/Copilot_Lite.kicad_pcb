@@ -8,6 +8,7 @@
   (title_block
     (title "Copilot Lite")
     (date "2023-04-03")
+    (rev "1.0")
     (company "(C) BayLibre")
     (comment 4 "AISLER Project ID: ENGQIKNM")
   )

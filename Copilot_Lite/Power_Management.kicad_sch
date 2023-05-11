@@ -7,6 +7,7 @@
   (title_block
     (title "Copilot Lite power switches")
     (date "2023-03-27")
+    (rev "1.0")
     (company "(C) BayLibre")
   )
 

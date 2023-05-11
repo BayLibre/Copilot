@@ -7,6 +7,7 @@
   (title_block
     (title "Copilot Lite USB controller")
     (date "2023-03-28")
+    (rev "1.0")
     (company "(C) BayLibre")
   )
 
