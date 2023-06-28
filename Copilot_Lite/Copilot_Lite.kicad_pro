@@ -492,7 +492,16 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "USB Super Speed",
+        "pattern": "/SS?X?_?"
+      },
+      {
+        "netclass": "USB High Speed",
+        "pattern": "/D?_?"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
