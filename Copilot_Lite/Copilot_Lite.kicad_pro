@@ -45,6 +45,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
+          "45_degree_only": false,
           "min_clearance": 0.5
         }
       },
@@ -61,19 +62,11 @@
         }
       ],
       "drc_exclusions": [
-        "copper_sliver|113278697|96519582|00000000-0000-0000-0000-000000000000|F.Cu",
-        "copper_sliver|115294993|97553581|00000000-0000-0000-0000-000000000000|F.Cu",
-        "copper_sliver|88417263|104737526|00000000-0000-0000-0000-000000000000|B.Cu",
-        "copper_sliver|94865500|96929221|00000000-0000-0000-0000-000000000000|B.Cu",
-        "starved_thermal|105875000|90225000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|fa5e6ec4-529a-4854-be94-d6d74889c33b|F.Cu",
-        "starved_thermal|110550000|97400000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|65912263-6487-45e5-8fb5-43782e76900f|F.Cu",
+        "silk_overlap|79815288|72118028|8b8017bc-0d3e-4466-8aa8-9619eda022ec|ae3273b1-abc0-44e6-b134-b2087a7f1a79",
         "starved_thermal|117750000|94700000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|d80fe8c2-70da-482b-9f14-1da18684ec78|F.Cu",
-        "starved_thermal|83800000|103300000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|1e7872fd-eff9-43cb-a255-a9dab4bb0526|F.Cu",
-        "starved_thermal|93225000|90000000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|26a36e7b-0cb7-45a8-a80a-2c94de0a756c|F.Cu",
-        "starved_thermal|96525000|100600000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|c7fcb401-d7be-45b5-8518-36df8d3bb77d|F.Cu",
-        "starved_thermal|96525000|97050000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|95a1f7b4-116f-4764-a777-033cb02ebecc|F.Cu",
-        "starved_thermal|98737500|88100000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|042cb6fd-8ee1-4d6c-b029-9c6a467cebb4|F.Cu",
-        "starved_thermal|98737500|91650000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|2d67d389-8d0f-4ca3-993b-73ea8b3629c3|F.Cu"
+        "starved_thermal|67262500|91100000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|2a9f4bed-d997-4b87-8f93-e8cbc7d75164|F.Cu",
+        "starved_thermal|72006000|101820000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|51d53166-f2e1-460f-b6e3-276aafd5cc16|F.Cu",
+        "starved_thermal|83800000|103300000|59d0aa2b-6326-49fe-a96e-658dac18f4b7|1e7872fd-eff9-43cb-a255-a9dab4bb0526|F.Cu"
       ],
       "meta": {
         "version": 2
@@ -115,7 +108,7 @@
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
-        "starved_thermal": "warning",
+        "starved_thermal": "error",
         "text_height": "warning",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
@@ -129,6 +122,8 @@
         "zones_intersect": "error"
       },
       "rules": {
+        "allow_blind_buried_vias": false,
+        "allow_microvias": false,
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
@@ -142,7 +137,7 @@
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.09999999999999999,
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
@@ -209,7 +204,8 @@
           "drill": 0.3
         }
       ],
-      "zones_allow_external_fillets": false
+      "zones_allow_external_fillets": false,
+      "zones_use_no_outline": true
     },
     "layer_presets": [],
     "viewports": []
@@ -496,16 +492,7 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": [
-      {
-        "netclass": "USB High Speed",
-        "pattern": "/D*_?"
-      },
-      {
-        "netclass": "USB Super Speed",
-        "pattern": "/SS?X*_?"
-      }
-    ]
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
