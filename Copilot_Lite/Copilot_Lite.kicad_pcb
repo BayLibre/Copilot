@@ -7,8 +7,8 @@
   (paper "A4")
   (title_block
     (title "Copilot Lite")
-    (date "2023-06-28")
-    (rev "1.1")
+    (date "2023-08-25")
+    (rev "1.2")
     (company "(C) BayLibre")
   )
 
@@ -6817,7 +6817,7 @@
   (gr_text "Copilot Lite" (at 110 67.6) (layer "F.SilkS") (tstamp 14a98072-6452-42e1-83cd-7a633d9a773e)
     (effects (font (size 1.4 1.4) (thickness 0.3) bold italic) (justify bottom))
   )
-  (gr_text "Version 1.1" (at 110 71.4) (layer "F.SilkS") (tstamp 50fe56b1-8210-49e1-93d7-0f99d785c9d9)
+  (gr_text "Version 1.2" (at 110 71.4) (layer "F.SilkS") (tstamp 50fe56b1-8210-49e1-93d7-0f99d785c9d9)
     (effects (font (size 1.4 1.4) (thickness 0.3) bold italic) (justify bottom))
   )
   (gr_text "Max power: 240W (48V@5A)" (at 97.5 74) (layer "F.SilkS" knockout) (tstamp a0fa2f8d-8c2d-4b03-90ed-3a26aea9fd20)
