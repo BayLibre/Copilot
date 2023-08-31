@@ -33,46 +33,20 @@
 #define MAIN_USB_PRODUCT_STRING "BayLibre Copilot Lite V1.1"
 
 //-------------------------------------------------------------------------------------------------
-// Private types
-//-------------------------------------------------------------------------------------------------
-/** An FT-X serie MTP EEPROM header. See FTDI AN_201 document for more details. */
-typedef struct __attribute__((packed))
-{
-	uint16_t Misc_Config;
-	uint16_t USB_VID;
-	uint16_t USB_PID;
-	uint16_t USB_BCD_Release_Number;
-	uint8_t Config_Description_Value;
-	uint8_t Max_Power;
-	uint16_t Device_And_Peripheral_Control;
-	uint8_t DBUS_And_CBUS_Control;
-	uint8_t Unused_0;
-	uint8_t Manufacturer_String_Description_Pointer;
-	uint8_t Manufacturer_String_Description_Length;
-	uint8_t Product_String_Description_Pointer;
-	uint8_t Product_String_Description_Length;
-	uint8_t Serial_String_Description_Pointer;
-	uint8_t Serial_String_Description_Length;
-	uint16_t I2C_Slave_Address;
-	uint8_t I2C_Slave_Device_ID[3];
-	uint8_t Unused_1;
-	uint8_t CBUS_Mux_Control[7];
-	uint8_t Unused_2[3];
-} TEEPROMHeader;
-
-//-------------------------------------------------------------------------------------------------
 // Private functions
 //-------------------------------------------------------------------------------------------------
 /** Detect all connected compatible FTDI devices and make sure only one is connected.
  * @param Pointer_FTDI_Context The initialized FTDI context.
+ * @param Pointer_String_USB_Serial_Number On output, will contain the USB serial number coming from factory.
+ * @param Serial_Number_Buffer_Size The size in bytes of the serial number buffer.
  * @return -1 if an error occurred,
  * @return 0 on success.
  */
-static int MainFindDevice(struct ftdi_context *Pointer_FTDI_Context)
+static int MainFindDevice(struct ftdi_context *Pointer_FTDI_Context, char *Pointer_String_USB_Serial_Number, size_t Serial_Number_Buffer_Size)
 {
 	struct ftdi_device_list *Pointer_Devices_List, *Pointer_Devices_List_Item;
 	int Return_Value = -1, Devices_Count = 0;
-	char String_Manufacturer[64], String_Description[64];
+	char String_Manufacturer[64], String_Description[64], String_Serial_Number[64];
 
 	// Detect all FTDI devices from the FT-X serie
 	if (ftdi_usb_find_all(Pointer_FTDI_Context, &Pointer_Devices_List, MAIN_FTDI_FT230X_USB_VENDOR_ID, MAIN_FTDI_FT230X_USB_PRODUCT_ID) < 0)
@@ -86,7 +60,7 @@ static int MainFindDevice(struct ftdi_context *Pointer_FTDI_Context)
 	while (Pointer_Devices_List_Item != NULL)
 	{
 		// Is this device a FT230X or a Copilot Lite ?
-		if (ftdi_usb_get_strings(Pointer_FTDI_Context, Pointer_Devices_List_Item->dev, String_Manufacturer, sizeof(String_Manufacturer), String_Description, sizeof(String_Description), NULL, 0) < 0)
+		if (ftdi_usb_get_strings(Pointer_FTDI_Context, Pointer_Devices_List_Item->dev, String_Manufacturer, sizeof(String_Manufacturer), String_Description, sizeof(String_Description), String_Serial_Number, sizeof(String_Serial_Number)) < 0)
 		{
 			LOG("Error : failed to get the USB strings for an USB device (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
 			goto Exit_Free_List;
@@ -116,6 +90,14 @@ static int MainFindDevice(struct ftdi_context *Pointer_FTDI_Context)
 		goto Exit_Free_List;
 	}
 
+	// Store the serial number now that everything is working
+	if (strlen(String_Serial_Number) >= Serial_Number_Buffer_Size)
+	{
+		LOG("Error : not enough room to store the USB serial number.\n");
+		goto Exit_Free_List;
+	}
+	strcpy(Pointer_String_USB_Serial_Number, String_Serial_Number);
+
 	// Everything went fine
 	Return_Value = 0;
 
@@ -125,98 +107,53 @@ Exit_Free_List:
 	return Return_Value;
 }
 
-/** Convert a 8-bit ASCII string to the FTDI string descriptor format.
- * @param Pointer_String_Source_ASCII The string to convert.
- * @param Pointer_Destination_Buffer On output, will contain the corresponding string descriptor.
- * @param Destination_Buffer_Size The destination string descriptor buffer size in bytes.
- * @warning This function does not really convert to UTF-16, make sure to use only 8-bit ASCII characters in the source string.
- * @return -1 if an error occurred,
- * @return 0 on success.
- */
-int MainCreateEEPROMStringDescriptor(char *Pointer_String_Source_ASCII, void *Pointer_Destination_Buffer, size_t Destination_Buffer_Size)
-{
-	uint8_t *Pointer_Destination_Buffer_Bytes = Pointer_Destination_Buffer;
-	int Descriptor_Size;
-
-	// The FTDI string descriptor seems to need two bytes at its beginning to store the string size
-	if (Destination_Buffer_Size < 2)
-	{
-		LOG("Error : the destination buffer size must be greater than 2 bytes.\n");
-		return -1;
-	}
-	Pointer_Destination_Buffer_Bytes++; // Bypass the first byte for now (it will contain the string size in bytes, including these two bytes)
-	*Pointer_Destination_Buffer_Bytes = 3; // It seems that the second byte always contain the value 3
-	Pointer_Destination_Buffer_Bytes++;
-	Destination_Buffer_Size--;
-	Descriptor_Size = 2;
-
-	// Copy all string characters, adding a zero to atch
-	while ((*Pointer_String_Source_ASCII != 0) && (Destination_Buffer_Size > 0))
-	{
-		*Pointer_Destination_Buffer_Bytes = *Pointer_String_Source_ASCII;
-		Pointer_Destination_Buffer_Bytes++;
-		*Pointer_Destination_Buffer_Bytes = 0;
-		Pointer_Destination_Buffer_Bytes++;
-		Pointer_String_Source_ASCII++;
-		Destination_Buffer_Size--;
-		Descriptor_Size += 2;
-	}
-
-	// Fill the descriptor size
-	Pointer_Destination_Buffer_Bytes = Pointer_Destination_Buffer;
-	*Pointer_Destination_Buffer_Bytes = (uint8_t) Descriptor_Size;
-
-	return Descriptor_Size;
-}
-
 /** Serialize the FTDI EEPROM (configure the USB strings, the CBUS pins function, the maximum drawn power and so on.
  * @param Pointer_FTDI_Context The initialized FTDI context.
+ * @param Pointer_String_USB_Serial_Number The USB serial number string to program into the device EEPROM.
  * @return -1 if an error occurred,
  * @return 0 on success.
  */
-static int MainSerializeEEPROM(struct ftdi_context *Pointer_FTDI_Context)
+static int MainSerializeEEPROM(struct ftdi_context *Pointer_FTDI_Context, char *Pointer_String_USB_Serial_Number)
 {
-	int Return_Value = -1, Manufacturer_String_Descriptor_Size, Product_String_Descriptor_Size, Serial_Number_String_Descriptor_Size;
-	unsigned char EEPROM_Content[MAIN_FTDI_EEPROM_SIZE], Serial_Number_String_Descriptor_Buffer[64], Buffer[128];
-	TEEPROMHeader *Pointer_Header;
+	int Return_Value = -1, i;
 
-	// Retrieve the EEPROM content
-	printf("Reading EEPROM content...\n");
-	if (ftdi_read_eeprom(Pointer_FTDI_Context) < 0)
+	// Fill the in-RAM EEPROM structure with the factory settings, so in the same time set the USB strings
+	if (ftdi_eeprom_initdefaults(Pointer_FTDI_Context, MAIN_USB_MANUFACTURER_STRING, MAIN_USB_PRODUCT_STRING, Pointer_String_USB_Serial_Number) < 0)
 	{
-		LOG("Error : failed to read EEPROM content (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
+		LOG("Error : could not initialize the FTDI EEPROM (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
 		goto Exit_Close_Device;
 	}
-	if (ftdi_get_eeprom_buf(Pointer_FTDI_Context, EEPROM_Content, sizeof(EEPROM_Content)) < 0)
+
+	// Set bus power to 500mA
+	if (ftdi_set_eeprom_value(Pointer_FTDI_Context, MAX_POWER, 500) < 0)
 	{
-		LOG("Error : failed to get the read EEPROM buffer (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
+		LOG("Error : failed to set the maximum power EEPROM setting (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
 		goto Exit_Close_Device;
 	}
-	Pointer_Header = (TEEPROMHeader *) EEPROM_Content;
 
-	// Keep the serial number string (it uses UTF-16 encoding)
-	Serial_Number_String_Descriptor_Size = Pointer_Header->Serial_String_Description_Length + 2; // Take into account the prefix bytes of the descriptor
-	if (Serial_Number_String_Descriptor_Size >= (int) sizeof(Serial_Number_String_Descriptor_Buffer))
+	// Configure all 4 CBUS pins as GPIOs
+	for (i = CBUS_FUNCTION_0; i < CBUS_FUNCTION_4 ; i++)
 	{
-		LOG("Error : the USB serial number string length is too long (%u bytes).\n", Serial_Number_String_Descriptor_Size);
+		if (ftdi_set_eeprom_value(Pointer_FTDI_Context, i, CBUSX_IOMODE) < 0)
+		{
+			LOG("Error : failed to set the CBUS %d function EEPROM setting (%s).\n", i - CBUS_FUNCTION_0, ftdi_get_error_string(Pointer_FTDI_Context));
+			goto Exit_Close_Device;
+		}
+	}
+
+	// Generate the binary image to write to the EEPROM
+	if (ftdi_eeprom_build(Pointer_FTDI_Context) < 0)
+	{
+		LOG("Error : could not build binary image for the EEPROM (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
 		goto Exit_Close_Device;
 	}
-	memcpy(Serial_Number_String_Descriptor_Buffer, &EEPROM_Content[Pointer_Header->Serial_String_Description_Pointer], Serial_Number_String_Descriptor_Size); // No need to terminate the string as it is handled as a buffer here
 
-	// Write the manufacturer string descriptor to the String Descriptor Space
-	Manufacturer_String_Descriptor_Size = MainCreateEEPROMStringDescriptor(MAIN_USB_MANUFACTURER_STRING, Buffer, sizeof(Buffer));
-	if (Manufacturer_String_Descriptor_Size < 0) goto Exit_Close_Device;
-	memcpy(&EEPROM_Content[MAIN_FTDI_EEPROM_STRING_DESCRIPTOR_SPACE_OFFSET], Buffer, Manufacturer_String_Descriptor_Size);
-
-	// Write the product string descriptor just after the manufacturer string descriptor
-	Product_String_Descriptor_Size = MainCreateEEPROMStringDescriptor(MAIN_USB_PRODUCT_STRING, Buffer, sizeof(Buffer));
-	if (Product_String_Descriptor_Size < 0) goto Exit_Close_Device;
-	memcpy(&EEPROM_Content[MAIN_FTDI_EEPROM_STRING_DESCRIPTOR_SPACE_OFFSET + Manufacturer_String_Descriptor_Size], Buffer, Product_String_Descriptor_Size);
-
-	// Write back the serial number string descriptor just after the product string descriptor
-	memcpy(&EEPROM_Content[MAIN_FTDI_EEPROM_STRING_DESCRIPTOR_SPACE_OFFSET + Manufacturer_String_Descriptor_Size + Product_String_Descriptor_Size], Serial_Number_String_Descriptor_Buffer, Serial_Number_String_Descriptor_Size);
-
-	// TODO
+	// Update the device EEPROM
+	if (ftdi_write_eeprom(Pointer_FTDI_Context) < 0)
+	{
+		LOG("Error : failed to write EEPROM image to device (%s).\n", ftdi_get_error_string(Pointer_FTDI_Context));
+		goto Exit_Close_Device;
+	}
 
 	// Everything went fine
 	Return_Value = 0;
@@ -234,6 +171,7 @@ int main(void)
 {
 	struct ftdi_context *Pointer_FTDI_Context;
 	int Return_Value = EXIT_FAILURE;
+	char String_USB_Serial_Number[64];
 
 	// This program must be executed as root, otherwise some udev rules would be required
 	if (getuid() != 0)
@@ -252,12 +190,14 @@ int main(void)
 
 	// Check whether a single corresponding FTDI device is connected
 	printf("Searching for the FTDI device to serialize...\n");
-	if (MainFindDevice(Pointer_FTDI_Context) != 0) goto Exit_Free_Library;
+	if (MainFindDevice(Pointer_FTDI_Context, String_USB_Serial_Number, sizeof(String_USB_Serial_Number)) != 0) goto Exit_Free_Library;
 
 	// Configure the required EEPROM settings
-	if (MainSerializeEEPROM(Pointer_FTDI_Context) != 0) goto Exit_Free_Library;
+	printf("Serializing the device with serial number \"%s\".\n", String_USB_Serial_Number);
+	if (MainSerializeEEPROM(Pointer_FTDI_Context, String_USB_Serial_Number) != 0) goto Exit_Free_Library;
 
 	// Everything went fine
+	printf("\033[32mSerialization was successful, please reset the FTDI device by disconnecting it.\033[0m\n");
 	Return_Value = EXIT_SUCCESS;
 
 Exit_Free_Library:
