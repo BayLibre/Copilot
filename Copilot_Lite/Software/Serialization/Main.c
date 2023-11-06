@@ -30,7 +30,7 @@
 /** The USB manufacturer string value to set. */
 #define MAIN_USB_MANUFACTURER_STRING "BayLibre"
 /** The USB description string value to set. */
-#define MAIN_USB_PRODUCT_STRING "BayLibre Copilot Lite V1.1"
+#define MAIN_USB_PRODUCT_STRING "BayLibre Copilot Lite V1.2"
 
 //-------------------------------------------------------------------------------------------------
 // Private functions
