@@ -1,0 +1,29 @@
+stages:
+  - build
+  - deploy
+
+build_pages:
+  stage: build
+  image: python:latest
+  script:
+  - pip install -U sphinx sphinx-rtd-theme sphinx-prompt
+  - sphinx-build -W -n -b html doc/source public
+  artifacts:
+    paths:
+    - public
+  only:
+  - branches
+  except:
+  - master
+
+pages:
+  stage: deploy
+  image: python:latest
+  script:
+  - pip install -U sphinx sphinx-rtd-theme sphinx-prompt
+  - sphinx-build -b html doc/source public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
