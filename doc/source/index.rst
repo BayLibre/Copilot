@@ -10,6 +10,7 @@ Welcome to Copilot's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   getting-started
 
 
 Indices and tables
