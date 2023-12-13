@@ -44,3 +44,37 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
 
 This creates an entry in ``/dev/copilot/by-id/<copilot_id>`` where ``<copilot_id>`` is an unique serial number.
 
+Example commands
+----------------
+
+Now that the udev rules have been installed, we can interact with Copilot using the
+standard ``libgpiod-utils``, such as ``gpioset``.
+
+Start by find your ``ID_USB_SERIAL_SHORT`` by inspecting ``/dev/copilot/by-id``.
+After that export it as an environment variable:
+
+.. prompt:: bash $ auto
+
+   # here, D30HF04Y is an example. Modify for your own serial number accordingly.
+   $ export ID_USB_SERIAL_SHORT="D30HF04Y"
+
+By default, USB passthrough is disabled. We can enable USB and the jack barrel power with:
+
+.. prompt:: bash $
+
+   gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
+
+.. note::
+
+   For older versions of ``libgpiod-utils``, (before v2.0), use the following instead:
+
+   .. prompt:: bash $
+
+      gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
+
+
+To disable USB and jack power, use ``0=0`` instead:
+
+.. prompt:: bash $
+
+   gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
