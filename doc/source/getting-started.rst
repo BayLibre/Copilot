@@ -1,6 +1,29 @@
 Getting started
 ===============
 
+Hardware setup
+--------------
+
+To use Copilot, you need:
+
+- A Copilot
+- 3 USB-C cables
+- (Optional) barrel jack cables for additional power supply
+- (Optional) 3 wires for FTDI (debug uart)
+
+Plug it in as following:
+
+.. image:: pictures/copilot_lite_cables.jpg
+
+.. note::
+   By default, Copilot has everything turned off. To enable USB power supply, follow steps in :ref:`Example commands`.
+
+.. warning::
+   Even if USB-C is a **reversible** connector, the USB-C cables can only work in **one direction**.
+   If USB power supply seems not working after enabling. Try flipping one USB-C cable on either ``J9`` or ``J3``.
+
+For additional board documentation, read on the PCB itself.
+
 Udev rules
 ----------
 
@@ -43,6 +66,8 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
      sudo udevadm trigger
 
 This creates an entry in ``/dev/copilot/by-id/<copilot_id>`` where ``<copilot_id>`` is an unique serial number.
+
+.. _Example commands:
 
 Example commands
 ----------------
