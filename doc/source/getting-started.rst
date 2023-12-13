@@ -78,3 +78,64 @@ To disable USB and jack power, use ``0=0`` instead:
 .. prompt:: bash $
 
    gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
+
+Helper script
+-------------
+
+``copilot.sh`` is an example of helper script which would allow to either reboot or power off a board connected to Copilot.
+
+It can be used with:
+
+.. prompt:: bash $ auto
+
+   # to reboot
+   copilot.sh reboot
+   # to poweroff
+   copilot.sh poweroff
+
+The contents of ``copilot.sh`` could be as following:
+
+.. code-block:: bash
+
+   #!/bin/bash
+
+   # change accordingly to your own
+   ID_USB_SERIAL_SHORT="D30HF04Y"
+
+   usage()
+   {
+       echo "Usage: ${0##*/} reboot|poweroff"
+   }
+
+   if [[ $# -ne 1 ]]; then
+       usage
+       exit 1
+   fi
+
+   do_poweroff()
+   {
+       gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
+       # or for libgpiod v < 2.0
+       # gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
+   }
+
+   do_poweron()
+   {
+       gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
+       # or for libgpiod v < 2.0
+       # gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
+   }
+
+   do_reboot()
+   {
+       do_poweroff
+       do_poweron
+   }
+
+   case "$1" in
+       "reboot") do_reboot;;
+       "poweroff") do_poweroff;;
+       *) usage; exit 1;;
+
+   esac
+
