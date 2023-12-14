@@ -23,6 +23,7 @@ Plug it in as following:
    If USB power supply seems not working after enabling. Try flipping one USB-C cable on either ``J9`` or ``J3``.
 
 For additional board documentation, read on the PCB itself.
+For design files, see: https://gitlab.baylibre.com/baylibre/copilot/copilot
 
 Udev rules
 ----------
