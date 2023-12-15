@@ -25,7 +25,7 @@ Plug it in as following:
 For additional board documentation, read on the PCB itself.
 For design files, see: https://gitlab.baylibre.com/baylibre/copilot/copilot
 
-The latest schematics are available on the `artifacts <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/jobs/artifacts/main/browse?job=kicad>`_ page.
+The latest schematics are available on the `artifacts <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/jobs/artifacts/master/browse?job=kicad>`_ page.
 
 Udev rules
 ----------
