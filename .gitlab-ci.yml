@@ -27,3 +27,15 @@ pages:
     - public
   only:
   - master
+
+kicad:
+  stage: deploy
+  image: kicad/kicad:7.0
+  script:
+  - mkdir --parents hardware_docs
+  - kicad-cli sch export pdf Copilot_Lite/Hardware/Copilot_Lite.kicad_sch --output hardware_docs/Copilot_Lite.pdf
+  artifacts:
+    expose_as: 'hardware documents'
+    paths: ['hardware_docs']
+  only:
+  - master
