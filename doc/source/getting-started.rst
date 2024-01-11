@@ -21,7 +21,7 @@ Plug it in as following:
 .. image:: pictures/copilot_lite_cables.jpg
 
 .. note::
-   By default, Copilot has everything turned off. To enable USB power supply, follow steps in :ref:`Example commands`.
+   By default, Copilot has everything turned off. To enable USB power supply, follow steps in :ref:`Switch power`.
 
 .. warning::
    Even if USB-C is a **reversible** connector, the USB-C cables can only work in **one direction**.
@@ -75,10 +75,10 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
 
 This creates an entry in ``/dev/copilot/by-id/<copilot_id>`` where ``<copilot_id>`` is an unique serial number.
 
-.. _Example commands:
+.. _Switch power:
 
-Example commands
-----------------
+Switch power
+------------
 
 Now that the udev rules have been installed, we can interact with Copilot using the
 standard ``libgpiod-utils``, such as ``gpioset``.
@@ -113,7 +113,7 @@ To disable USB and jack power, use ``0=0`` instead:
    gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
 
 Helper script
--------------
+~~~~~~~~~~~~~
 
 ``copilot.sh`` is an example of helper script which would allow to either reboot or power off a board connected to Copilot.
 
@@ -149,19 +149,21 @@ The contents of ``copilot.sh`` could be as following:
    {
        gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
        # or for libgpiod v < 2.0
-       # gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
+       #gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0
    }
 
    do_poweron()
    {
        gpioset --hold-period=20ms -t0 --chip /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
        # or for libgpiod v < 2.0
-       # gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
+       #gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
    }
 
    do_reboot()
    {
        do_poweroff
+       # maybe wait until all power drained from the board
+       #sleep 5
        do_poweron
    }
 
