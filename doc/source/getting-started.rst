@@ -174,3 +174,17 @@ The contents of ``copilot.sh`` could be as following:
 
    esac
 
+Connect to a UART
+-----------------
+
+UART can be connected to the Copilot on the left-most header at the bottom of
+the PCB. The pins are documented on the bottom of the PCB. The voltage can be
+selected on the next header.
+
+To use the connected UART in Linux you can use your favorite terminal program
+with the device `/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty`, in this
+example we are using tio:
+
+.. code-block:: bash
+
+   tio /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty
