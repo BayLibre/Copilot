@@ -7,9 +7,14 @@ Hardware setup
 To use Copilot, you need:
 
 - A Copilot
-- 3 USB-C cables
-- (Optional) barrel jack cables for additional power supply
-- (Optional) 3 wires for FTDI (debug uart)
+- 1 USB-C cable for control (only USB2 wiring needed)
+
+Optionally, depending on your needs:
+
+- 2 USB-C cables for power (power supply <-> Copilot <-> DUT)
+- 2 Barrel jack cables for additional power supply
+- 3+ wires for FTDI (debug uart)
+- Wires for additional GPIOs
 
 Plug it in as following:
 
