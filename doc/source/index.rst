@@ -30,6 +30,7 @@ Features
    :caption: Documentation:
 
    getting-started
+   technical-information
 
 Indices and tables
 ==================
