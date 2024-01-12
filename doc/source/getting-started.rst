@@ -122,9 +122,9 @@ It can be used with:
 .. prompt:: bash $ auto
 
    # to reboot
-   copilot.sh reboot
+   $ copilot.sh reboot
    # to poweroff
-   copilot.sh poweroff
+   $ copilot.sh poweroff
 
 The contents of ``copilot.sh`` could be as following:
 
@@ -182,7 +182,7 @@ the PCB. The pins are documented on the bottom of the PCB. The voltage can be
 selected on the next header.
 
 To use the connected UART in Linux you can use your favorite terminal program
-with the device `/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty`, in this
+with the device ``/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty``, in this
 example we are using tio:
 
 .. prompt:: bash
