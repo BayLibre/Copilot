@@ -17,7 +17,7 @@ Features
 
  - Power switching with a simple command available in many distributions:
 
-   .. code-block:: bash
+   .. prompt:: bash
 
      gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
 

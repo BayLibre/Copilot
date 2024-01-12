@@ -185,6 +185,6 @@ To use the connected UART in Linux you can use your favorite terminal program
 with the device `/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty`, in this
 example we are using tio:
 
-.. code-block:: bash
+.. prompt:: bash
 
    tio /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty
