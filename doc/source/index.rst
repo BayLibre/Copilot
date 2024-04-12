@@ -6,9 +6,10 @@
 Welcome to Copilot's documentation!
 ===================================
 
-Copilot is a small device to control power and UART of a Device Under Test. It
-is connected to a PC with a single USB connection and another USB or Jack
-connection for power switching.
+Copilot is a small device used to control the power and UART of a Device Under
+Test (DUT). Copilot is controlled and powered by a PC using a single USB-C
+connection. It controls the DUT power supply through either another USB-C
+connection or a barrel jack connection.
 
 .. image:: pictures/copilot_lite_cables.jpg
 
