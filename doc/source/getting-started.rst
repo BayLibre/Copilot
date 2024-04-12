@@ -11,9 +11,9 @@ To use Copilot, you need:
 
 Optionally, depending on your needs:
 
-- 2 USB-C cables for power (power supply <-> Copilot <-> DUT)
+- 2 USB-C cables for power (power supply ↔ Copilot ↔ DUT)
 - 2 Barrel jack cables for additional power supply
-- 3+ wires for FTDI (debug uart)
+- 3+ wires for FTDI (debug UART)
 - Wires for additional GPIOs
 
 Plug it in as following:
@@ -21,23 +21,36 @@ Plug it in as following:
 .. image:: pictures/copilot_lite_cables.jpg
 
 .. note::
-   By default, Copilot has everything turned off. To enable USB power supply, follow steps in :ref:`Switch power`.
+
+   By default, the USB and barrel jack power passthroughs are controlled by a
+   single GPIO. To enable the USB and barrel jack power passthroughs follow
+   the steps in :ref:`Switch power`.
 
 .. warning::
-   Even if USB-C is a **reversible** connector, the USB-C cables can only work in **one direction**.
-   If USB power supply seems not working after enabling. Try flipping one USB-C cable on either ``J9`` or ``J3``.
 
-For additional board documentation, read on the PCB itself.
-For design files, see: https://gitlab.baylibre.com/baylibre/copilot/copilot
+   Even if USB-C is a **reversible** connector, the USB-C cables can only work
+   in **one direction**.  If USB power supply seems not working after enabling.
+   Try flipping one USB-C cable on either ``J9`` or ``J3``.
 
-The latest schematics are available on the `artifacts <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/jobs/artifacts/master/browse?job=kicad>`_ page.
+.. warning::
+
+   Copilot is not designed to support power passthrough through the USB and
+   barrel jack connectors at the same time. It is therefore good practice to
+   only jump a single pair of pins at a time
+
+Basic documentation has been silk screened onto both sides of the board.
+
+Design files are manually generated for each release and linked to on the
+`releases page <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/releases>`_.
+
+The latest schematics are automatically built using CI/CD and available on the
+`artifacts page <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/jobs/artifacts/master/browse?job=kicad>`_.
 
 Udev rules
 ----------
 
-Generally, a linux PC has multiple gpiochips on the system.
-
-To make sure we can easily identify the Copilot, we can match the chip with udev to add some user-friendly symlinks.
+Generally, a PC running Linux has multiple GPIOs in the system. To easily
+identify Copilot, create some user-friendly symlinks with udev as follows.
 
 #. Add the ``/etc/udev/rules.d/70.copilot.rules`` udev rules to your system:
 
@@ -52,7 +65,8 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
 
    .. note::
 
-     For users who rely on the ``plugdev`` group, use the following rules instead:
+     For users who rely on the ``plugdev`` group, use the following rules
+     instead:
 
      .. code-block::
 
@@ -63,8 +77,8 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
          # Create Copilot tty symlink
          ENV{IS_COPILOT}=="1", SUBSYSTEMS=="tty", SYMLINK+="copilot/by-id/$env{ID_USB_SERIAL_SHORT}/tty"
 
-     ``uaccess`` should be used instead of ``plugdev``.
-     For more information, see: https://github.com/systemd/systemd/issues/4288
+     ``uaccess`` should be used instead of ``plugdev``. For more information,
+     see: https://github.com/systemd/systemd/issues/4288
 
 #. Reload the udev rules with:
 
@@ -73,7 +87,8 @@ To make sure we can easily identify the Copilot, we can match the chip with udev
      sudo udevadm control --reload
      sudo udevadm trigger
 
-This creates an entry in ``/dev/copilot/by-id/<copilot_id>`` where ``<copilot_id>`` is an unique serial number.
+This creates an entry in ``/dev/copilot/by-id/<copilot_id>`` where
+``<copilot_id>`` is an unique serial number.
 
 .. _Switch power:
 
@@ -83,15 +98,27 @@ Switch power
 Now that the udev rules have been installed, we can interact with Copilot using the
 standard ``libgpiod-utils``, such as ``gpioset``.
 
-Start by find your ``ID_USB_SERIAL_SHORT`` by inspecting ``/dev/copilot/by-id``.
-After that export it as an environment variable:
+Start by finding the serial number for your Copilot (e.g. ``D30HF04Y``) and
+export it as an environment variable:
 
 .. prompt:: bash $ auto
 
-   # here, D30HF04Y is an example. Modify for your own serial number accordingly.
+   $ tree /dev/copilot/
+   /dev/copilot/
+   └── by-id
+       └── D30HF04Y
+           ├── gpiochip -> ../../../gpiochip0
+           └── tty -> ../../../ttyUSB1
    $ export ID_USB_SERIAL_SHORT="D30HF04Y"
 
-By default, USB passthrough is disabled. We can enable USB and the jack barrel power with:
+Power over the USB and barrel jack connectors may be independently configured
+using the J1 header to be either controlled by a single shared GPIO or always
+passthrough power. See the silk screen at the top of the rear side of the
+board.
+
+By default, the USB and barrel jack power passthroughs are controlled by your
+PC using a single GPIO that is disabled after power cycling Copilot. The
+passthroughs can be powered by enabling the GPIO as follows:
 
 .. prompt:: bash $
 
@@ -99,14 +126,14 @@ By default, USB passthrough is disabled. We can enable USB and the jack barrel p
 
 .. note::
 
-   For older versions of ``libgpiod-utils``, (before v2.0), use the following instead:
+   For older versions of ``libgpiod-utils``, (before v2.0), use the following
+   instead:
 
    .. prompt:: bash $
 
       gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1
 
-
-To disable USB and jack power, use ``0=0`` instead:
+To disable the barrel jack power passthrough, use ``0=0`` instead:
 
 .. prompt:: bash $
 
@@ -115,7 +142,8 @@ To disable USB and jack power, use ``0=0`` instead:
 Helper script
 ~~~~~~~~~~~~~
 
-``copilot.sh`` is an example of helper script which would allow to either reboot or power off a board connected to Copilot.
+``copilot.sh`` is an example helper script which can either reboot or power off
+a board connected to Copilot.
 
 It can be used with:
 
@@ -177,13 +205,13 @@ The contents of ``copilot.sh`` could be as following:
 Connect to a UART
 -----------------
 
-UART can be connected to the Copilot on the left-most header at the bottom of
-the PCB. The pins are documented on the bottom of the PCB. The voltage can be
-selected on the next header.
+Connect to the Copilot UART using the left-most header at the bottom of
+the PCB (J4). The pins are documented on the bottom of the PCB. The voltage can
+be selected on the next header.
 
 To use the connected UART in Linux you can use your favorite terminal program
 with the device ``/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty``, in this
-example we are using tio:
+example we are using ``tio``:
 
 .. prompt:: bash
 
