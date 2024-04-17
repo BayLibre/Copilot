@@ -16,6 +16,25 @@ build_pages:
   except:
   - master
 
+ibom:
+  stage: build
+  image: fedora:latest
+  script:
+  - dnf groupinstall -y "Development Tools"
+  - dnf install -y xorg-x11-server-Xvfb kicad python3-pip
+  - pip install InteractiveHtmlBom
+  - mkdir --parents public
+  - xvfb-run --auto-servernum --server-args "-screen 0 1024x768x24"
+    generate_interactive_bom
+    --no-browser
+    --layer-view F Copilot_Lite/Hardware/Copilot_Lite.kicad_pcb
+    --dest-dir ../../public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
 pages:
   stage: deploy
   image: python:latest
