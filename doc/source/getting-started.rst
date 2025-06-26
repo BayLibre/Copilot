@@ -56,9 +56,11 @@ Udev rules
 Generally, a PC running Linux has multiple GPIOs in the system. To easily
 identify Copilot, create some user-friendly symlinks with udev as follows.
 
-#. Add the ``/etc/udev/rules.d/70.copilot.rules`` udev rules to your system:
+#. Add the ``/etc/udev/rules.d/70-copilot.rules`` udev rules to your system:
 
    .. code-block::
+
+     ACTION=="remove", GOTO="copilot_end"
 
      # Match Copilot USB devices
      SUBSYSTEMS=="usb", ATTRS{manufacturer}=="Bay[lL]ibre", ATTRS{product}=="Bay[lL]ibre Copilot*", ENV{IS_COPILOT}="1", ENV{ID_USB_SERIAL_SHORT}="$attr{serial}"
@@ -66,6 +68,8 @@ identify Copilot, create some user-friendly symlinks with udev as follows.
      ENV{IS_COPILOT}=="1", SUBSYSTEMS=="gpio", MODE="0660", SYMLINK+="copilot/by-id/$env{ID_USB_SERIAL_SHORT}/gpiochip", TAG+="uaccess"
      # Create Copilot tty symlink
      ENV{IS_COPILOT}=="1", SUBSYSTEMS=="tty", SYMLINK+="copilot/by-id/$env{ID_USB_SERIAL_SHORT}/tty"
+
+     LABEL="copilot_end"
 
    .. note::
 
