@@ -14,7 +14,7 @@ author = 'BayLibre'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx-prompt',
+    'sphinx_prompt',
 ]
 
 templates_path = ['_templates']
