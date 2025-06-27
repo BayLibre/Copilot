@@ -168,8 +168,9 @@ The contents of ``copilot.sh`` could be as following:
 
    #!/bin/bash
 
-   # change accordingly to your own
-   ID_USB_SERIAL_SHORT="D30HF04Y"
+   # Set a default value, but don't overwrite ID_USB_SERIAL_SHORT
+   # if it's already set
+   : ${ID_USB_SERIAL_SHORT:="D30HF04Y"}
 
    usage()
    {
