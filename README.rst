@@ -3,8 +3,8 @@ Copilot
 
 Hardware files are in the ``Copilot_Lite`` folder.
 
-The user documentation is available in the ``docs`` folder.
-The generated HTML pages can be viewed `here <https://baylibre.pages.baylibre.com/copilot/copilot/>`_
+The user documentation is available in the ``doc`` folder.
+The generated HTML pages can be viewed `here <https://baylibre.github.io/Copilot/>`_
 
 Doc build instructions
 ----------------------
