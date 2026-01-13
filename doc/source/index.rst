@@ -24,7 +24,7 @@ Features
 
  - Switch power up to 48V/5A via USB-C or Power Jack
  - Connect to DUT UART on 1.8/3.3/5V
- - Provide 4 additional GPIOs for other DUT related tasks
+ - Provide 3 additional GPIOs for other DUT related tasks
 
 .. toctree::
    :maxdepth: 2
