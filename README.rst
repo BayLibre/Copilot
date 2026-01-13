@@ -1,10 +1,17 @@
 Copilot
 =======
 
-Hardware files are in the ``Copilot_Lite`` folder.
+.. image:: doc/source/pictures/copilot_lite_top.jpg
+
+Description
+-----------
 
 The user documentation is available in the ``doc`` folder.
-The generated HTML pages can be viewed `here <https://baylibre.github.io/Copilot/>`_
+The generated HTML pages can be viewed `here <https://baylibre.github.io/Copilot/>`_.
+
+The board hardware files are in the ``Copilot_Lite/Hardware`` folder.
+
+The FTDI chip is configured and serialized by the ``Serialization`` software located in the  ``Copilot_Lite/Software`` folder.
 
 Doc build instructions
 ----------------------
