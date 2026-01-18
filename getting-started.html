@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting started &mdash; Copilot  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tips and tricks" href="tips-and-tricks.html" />
+    <link rel="prev" title="Welcome to Copilot’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Copilot
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setup">Hardware setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udev-rules">Udev rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switch-power">Switch power</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#helper-script">Helper script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-to-a-uart">Connect to a UART</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips-and-tricks.html">Tips and tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-information.html">Technical information</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Copilot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting-started.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<section id="hardware-setup">
+<h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>To use Copilot, you need:</p>
+<ul class="simple">
+<li><p>A Copilot</p></li>
+<li><p>1 USB-C cable for control (only USB2 wiring needed)</p></li>
+</ul>
+<p>Optionally, depending on your needs:</p>
+<ul class="simple">
+<li><p>2 USB-C cables for power (power supply ↔ Copilot ↔ DUT)</p></li>
+<li><p>2 Barrel jack cables for additional power supply</p></li>
+<li><p>3+ wires for FTDI (debug UART)</p></li>
+<li><p>Wires for additional GPIOs</p></li>
+</ul>
+<p>Plug it in as following:</p>
+<img alt="_images/copilot_lite_cables.jpg" src="_images/copilot_lite_cables.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the USB and barrel jack power passthroughs are controlled by a
+single GPIO. To enable the USB and barrel jack power passthroughs follow
+the steps in <a class="reference internal" href="#switch-power"><span class="std std-ref">Switch power</span></a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Even if USB-C is a <strong>reversible</strong> connector, the USB-C cables can only work
+in <strong>one direction</strong>.  If USB power supply seems not working after enabling.
+Try flipping one USB-C cable on either <code class="docutils literal notranslate"><span class="pre">J9</span></code> or <code class="docutils literal notranslate"><span class="pre">J3</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Copilot is not designed to support power passthrough through the USB and
+barrel jack connectors at the same time. It is therefore good practice to
+only jump a single pair of pins at a time</p>
+</div>
+<p>Basic documentation has been silk screened onto both sides of the board.</p>
+<p>Design files, along with the latest schematics and the interactive BOM,
+are manually generated for each release and available on the
+<a class="reference external" href="https://github.com/BayLibre/Copilot/releases">releases page</a>.
+The interactive BOM features an annotated diagram of the board
+including the silk screen, both sides of the board and searchable references.</p>
+</section>
+<section id="udev-rules">
+<h2>Udev rules<a class="headerlink" href="#udev-rules" title="Link to this heading"></a></h2>
+<p>Generally, a PC running Linux has multiple GPIOs in the system. To easily
+identify Copilot, create some user-friendly symlinks with udev as follows.</p>
+<ol class="arabic">
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">/etc/udev/rules.d/70-copilot.rules</span></code> udev rules to your system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACTION</span><span class="o">==</span><span class="s2">&quot;remove&quot;</span><span class="p">,</span> <span class="n">GOTO</span><span class="o">=</span><span class="s2">&quot;copilot_end&quot;</span>
+
+<span class="c1"># Match Copilot USB devices</span>
+<span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;usb&quot;</span><span class="p">,</span> <span class="n">ATTRS</span><span class="p">{</span><span class="n">manufacturer</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;Bay[lL]ibre&quot;</span><span class="p">,</span> <span class="n">ATTRS</span><span class="p">{</span><span class="n">product</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;Bay[lL]ibre Copilot*&quot;</span><span class="p">,</span> <span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">ENV</span><span class="p">{</span><span class="n">ID_USB_SERIAL_SHORT</span><span class="p">}</span><span class="o">=</span><span class="s2">&quot;$attr</span><span class="si">{serial}</span><span class="s2">&quot;</span>
+<span class="c1"># Enable Copilot gpio access via uaccess and copilot symlink</span>
+<span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;gpio&quot;</span><span class="p">,</span> <span class="n">MODE</span><span class="o">=</span><span class="s2">&quot;0660&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;copilot/by-id/$env</span><span class="si">{ID_USB_SERIAL_SHORT}</span><span class="s2">/gpiochip&quot;</span><span class="p">,</span> <span class="n">TAG</span><span class="o">+=</span><span class="s2">&quot;uaccess&quot;</span>
+<span class="c1"># Create Copilot tty symlink</span>
+<span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;tty&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;copilot/by-id/$env</span><span class="si">{ID_USB_SERIAL_SHORT}</span><span class="s2">/tty&quot;</span>
+
+<span class="n">LABEL</span><span class="o">=</span><span class="s2">&quot;copilot_end&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For users who rely on the <code class="docutils literal notranslate"><span class="pre">plugdev</span></code> group, use the following rules
+instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Match Copilot USB devices</span>
+<span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;usb&quot;</span><span class="p">,</span> <span class="n">ATTRS</span><span class="p">{</span><span class="n">manufacturer</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;Bay[lL]ibre&quot;</span><span class="p">,</span> <span class="n">ATTRS</span><span class="p">{</span><span class="n">product</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;Bay[lL]ibre Copilot*&quot;</span><span class="p">,</span> <span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">ENV</span><span class="p">{</span><span class="n">ID_USB_SERIAL_SHORT</span><span class="p">}</span><span class="o">=</span><span class="s2">&quot;$attr</span><span class="si">{serial}</span><span class="s2">&quot;</span>
+<span class="c1"># Enable Copilot gpio access for the plugdev group and copilot symlink</span>
+<span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;gpio&quot;</span><span class="p">,</span> <span class="n">MODE</span><span class="o">=</span><span class="s2">&quot;0660&quot;</span><span class="p">,</span> <span class="n">GROUP</span><span class="o">=</span><span class="s2">&quot;plugdev&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;copilot/by-id/$env</span><span class="si">{ID_USB_SERIAL_SHORT}</span><span class="s2">/gpiochip&quot;</span>
+<span class="c1"># Create Copilot tty symlink</span>
+<span class="n">ENV</span><span class="p">{</span><span class="n">IS_COPILOT</span><span class="p">}</span><span class="o">==</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&quot;tty&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;copilot/by-id/$env</span><span class="si">{ID_USB_SERIAL_SHORT}</span><span class="s2">/tty&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">uaccess</span></code> should be used instead of <code class="docutils literal notranslate"><span class="pre">plugdev</span></code>. For more information,
+see: <a class="reference external" href="https://github.com/systemd/systemd/issues/4288">https://github.com/systemd/systemd/issues/4288</a></p>
+</div>
+</li>
+<li><p>Reload the udev rules with:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload</span>
+<span class="prompt1">sudo<span class="w"> </span>udevadm<span class="w"> </span>trigger</span>
+</pre></div></div></div></blockquote>
+<p>This creates an entry in <code class="docutils literal notranslate"><span class="pre">/dev/copilot/by-id/&lt;copilot_id&gt;</span></code> where
+<code class="docutils literal notranslate"><span class="pre">&lt;copilot_id&gt;</span></code> is an unique serial number.</p>
+</section>
+<section id="switch-power">
+<span id="id1"></span><h2>Switch power<a class="headerlink" href="#switch-power" title="Link to this heading"></a></h2>
+<p>Now that the udev rules have been installed, we can interact with Copilot using the
+standard <code class="docutils literal notranslate"><span class="pre">libgpiod-utils</span></code>, such as <code class="docutils literal notranslate"><span class="pre">gpioset</span></code>.</p>
+<p>Start by finding the serial number for your Copilot (e.g. <code class="docutils literal notranslate"><span class="pre">D30HF04Y</span></code>) and
+export it as an environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">tree<span class="w"> </span>/dev/copilot/
+/dev/copilot/
+└──<span class="w"> </span>by-id
+<span class="w">    </span>└──<span class="w"> </span>D30HF04Y
+<span class="w">        </span>├──<span class="w"> </span>gpiochip<span class="w"> </span>-&gt;<span class="w"> </span>../../../gpiochip0
+<span class="w">        </span>└──<span class="w"> </span>tty<span class="w"> </span>-&gt;<span class="w"> </span>../../../ttyUSB1</span>
+<span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="o">=</span><span class="s2">&quot;D30HF04Y&quot;</span></span>
+</pre></div></div><p>Power over the USB and barrel jack connectors may be independently configured
+using the J1 header to be either controlled by a single shared GPIO or always
+passthrough power. See the silk screen at the top of the rear side of the
+board.</p>
+<p>By default, the USB and barrel jack power passthroughs are controlled by your
+PC using a single GPIO that is disabled after power cycling Copilot. The
+passthroughs can be powered by enabling the GPIO as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpioset<span class="w"> </span>--hold-period<span class="o">=</span>20ms<span class="w"> </span>-t0<span class="w"> </span>--chip<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/gpiochip<span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">1</span></span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For older versions of <code class="docutils literal notranslate"><span class="pre">libgpiod-utils</span></code>, (before v2.0), use the following
+instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpioset<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/gpiochip<span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">1</span></span>
+</pre></div></div></div>
+<p>To disable the barrel jack power passthrough, use <code class="docutils literal notranslate"><span class="pre">0=0</span></code> instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpioset<span class="w"> </span>--hold-period<span class="o">=</span>20ms<span class="w"> </span>-t0<span class="w"> </span>--chip<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/gpiochip<span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">0</span></span>
+</pre></div></div><section id="helper-script">
+<h3>Helper script<a class="headerlink" href="#helper-script" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">copilot.sh</span></code> is an example helper script which can either reboot or power off
+a board connected to Copilot.</p>
+<p>It can be used with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class=""><span class="c1"># to reboot</span></span>
+<span class="prompt1">copilot.sh<span class="w"> </span>reboot
+<span class="c1"># to poweroff</span></span>
+<span class="prompt1">copilot.sh<span class="w"> </span>poweroff</span>
+</pre></div></div><p>The contents of <code class="docutils literal notranslate"><span class="pre">copilot.sh</span></code> could be as following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Set a default value, but don&#39;t overwrite ID_USB_SERIAL_SHORT</span>
+<span class="c1"># if it&#39;s already set</span>
+:<span class="w"> </span><span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="p">:=</span><span class="s2">&quot;D30HF04Y&quot;</span><span class="si">}</span>
+
+usage<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: </span><span class="si">${</span><span class="nv">0</span><span class="p">##*/</span><span class="si">}</span><span class="s2"> reboot|poweroff&quot;</span>
+<span class="o">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>usage
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+do_poweroff<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span>gpioset<span class="w"> </span>--hold-period<span class="o">=</span>20ms<span class="w"> </span>-t0<span class="w"> </span>--chip<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/gpiochip<span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">0</span>
+<span class="w">    </span><span class="c1"># or for libgpiod v &lt; 2.0</span>
+<span class="w">    </span><span class="c1">#gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=0</span>
+<span class="o">}</span>
+
+do_poweron<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span>gpioset<span class="w"> </span>--hold-period<span class="o">=</span>20ms<span class="w"> </span>-t0<span class="w"> </span>--chip<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/gpiochip<span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">1</span>
+<span class="w">    </span><span class="c1"># or for libgpiod v &lt; 2.0</span>
+<span class="w">    </span><span class="c1">#gpioset /dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/gpiochip 0=1</span>
+<span class="o">}</span>
+
+do_reboot<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span>do_poweroff
+<span class="w">    </span><span class="c1"># maybe wait until all power drained from the board</span>
+<span class="w">    </span><span class="c1">#sleep 5</span>
+<span class="w">    </span>do_poweron
+<span class="o">}</span>
+
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="s2">&quot;reboot&quot;</span><span class="o">)</span><span class="w"> </span>do_reboot<span class="p">;;</span>
+<span class="w">    </span><span class="s2">&quot;poweroff&quot;</span><span class="o">)</span><span class="w"> </span>do_poweroff<span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span><span class="w"> </span>usage<span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;;</span>
+
+<span class="k">esac</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="connect-to-a-uart">
+<h2>Connect to a UART<a class="headerlink" href="#connect-to-a-uart" title="Link to this heading"></a></h2>
+<p>Connect to the Copilot UART using the left-most header at the bottom of
+the PCB (J4). The pins are documented on the bottom of the PCB. The voltage can
+be selected on the next header.</p>
+<p>To use the connected UART in Linux you can use your favorite terminal program
+with the device <code class="docutils literal notranslate"><span class="pre">/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty</span></code>, in this
+example we are using <code class="docutils literal notranslate"><span class="pre">tio</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">tio<span class="w"> </span>/dev/copilot/by-id/<span class="si">${</span><span class="nv">ID_USB_SERIAL_SHORT</span><span class="si">}</span>/tty</span>
+</pre></div></div></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Copilot’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tips-and-tricks.html" class="btn btn-neutral float-right" title="Tips and tricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, BayLibre.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
