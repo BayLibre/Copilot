@@ -40,15 +40,11 @@ Plug it in as following:
 
 Basic documentation has been silk screened onto both sides of the board.
 
-Design files are manually generated for each release and linked to on the
-`releases page <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/releases>`_.
-
-The latest schematics are automatically built using CI/CD and available on the
-`artifacts page <https://gitlab.baylibre.com/baylibre/copilot/copilot/-/jobs/artifacts/master/browse?job=kicad>`_.
-
-See the `interactive BOM </ibom.html>`_ for an annotated diagram of the board
+Design files, along with the latest schematics and the interactive BOM,
+are manually generated for each release and available on the
+`releases page <https://github.com/BayLibre/Copilot/releases>`_.
+The interactive BOM features an annotated diagram of the board
 including the silk screen, both sides of the board and searchable references.
-
 
 Udev rules
 ----------
