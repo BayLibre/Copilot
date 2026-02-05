@@ -18,8 +18,7 @@ $KIKIT panelize \
 	--tabs 'fixed; vcount: 2' \
 	--tooling '4hole; hoffset: 10mm; voffset: 5mm; size: 2mm' \
 	--fiducials '3fid; hoffset: 5mm; voffset:14mm; coppersize: 2mm; opening: 1mm' \
-	--text 'type: simple; text: TOP SIDE; anchor: mt; voffset: 5mm' \
-	--text 'type: simple; text: BOTTOM SIDE; anchor: mb; voffset: 5mm' \
+	--text 'type: simple; text: TOP SIDE; anchor: mt; voffset: 5mm;' \
 	--post 'copperfill: true; origin: bl; millradius: 1mm' \
 	Copilot_Lite.kicad_pcb Copilot_Lite_Panel.kicad_pcb
 
