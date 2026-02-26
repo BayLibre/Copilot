@@ -1,0 +1,49 @@
+{
+	"layout": {
+		"type": "grid",
+		"rows": 2,
+		"cols": 1,
+		"space": "4mm"
+	},
+	"framing": {
+		"type": "frame",
+		"width": "10mm",
+		"space": "2mm",
+		"cuts": "none"
+	},
+	"cuts": {
+		"type": "mousebites",
+		"drill": "0.5mm",
+		"spacing": "0.7mm",
+		"offset": "-0.25mm"
+	},
+	"tabs": {
+		"type": "fixed",
+		"vcount": 2
+	},
+	"tooling": {
+		"type": "4hole",
+		"hoffset": "10mm",
+		"voffset": "5mm",
+		"size": "2mm"
+	},
+	"fiducials": {
+		"type": "3fid",
+		"hoffset": "5mm",
+		"voffset": "14mm",
+		"coppersize": "2mm",
+		"opening": "1mm"
+	},
+	"text": {
+		"type": "simple",
+		"text": "TOP SIDE",
+		"anchor": "mt",
+		"voffset": "5mm"
+	},
+	"post": {
+		"copperfill": true,
+		// Make sure to recompute the areas filling, otherwise the mousebites won't have any clearing into the PCB copper areas
+		"refillzones": true,
+		"millradius": "1mm"
+	}
+}
