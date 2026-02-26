@@ -7,4 +7,5 @@ PCB_Production_Files/
 *.csv
 *.kicad_prl
 *.xml
+Copilot_Lite_Panel*
 fp-info-cache
