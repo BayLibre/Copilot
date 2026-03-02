@@ -9,8 +9,8 @@
 	(paper "A4")
 	(title_block
 		(title "Copilot Lite")
-		(date "2023-08-25")
-		(rev "1.2")
+		(date "2026-03-02")
+		(rev "1.3")
 		(company "(C) BayLibre")
 	)
 	(layers
@@ -24910,7 +24910,7 @@
 			(justify bottom)
 		)
 	)
-	(gr_text "Version 1.2"
+	(gr_text "Version 1.3"
 		(at 110 71.4 0)
 		(layer "F.SilkS")
 		(uuid "50fe56b1-8210-49e1-93d7-0f99d785c9d9")
