@@ -12,6 +12,7 @@ The generated HTML pages can be viewed `here <https://baylibre.github.io/Copilot
 The board hardware files are in the ``Copilot_Lite/Hardware`` folder.
 
 The FTDI chip is configured and serialized by the ``Serialization`` software located in the  ``Copilot_Lite/Software`` folder.
+The boards serialization and test procedure is described in the ``Copilot_Lite/Factory_Testing.md`` file.
 
 Doc build instructions
 ----------------------
