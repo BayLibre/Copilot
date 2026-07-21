@@ -1,0 +1,32 @@
+Doc build instructions
+----------------------
+
+Using python3, do:
+
+.. code-block:: console
+
+   $ pip3 install -U sphinx sphinx-rtd-theme sphinx-prompt
+
+
+Then rebuild with:
+
+.. code-block:: console
+
+   $ cd doc
+   $ make html
+
+The build output is located in ``doc/build/html/``. Open it with:
+
+.. code-block:: console
+
+   $ xdg-open doc/build/html/index.html
+
+
+Tips and tricks
+---------------
+
+To find a reference to another section, use:
+
+.. code-block:: console
+
+   $ python -m sphinx.ext.intersphinx doc/build/html/objects.inv

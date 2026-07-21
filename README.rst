@@ -23,36 +23,3 @@ More than one extension board can be stacked on top of the Copilot Lite master b
 
 * `3x USB 2.0 channels <https://github.com/BayLibre/Copilot-extension-triple-usb-2.0>`_, the Copilot Lite GPIOs can drive the channels power.
 * `3x signal relays <https://github.com/BayLibre/Copilot_Extension_Triple_Relays>`_, the Copilot Lite GPIOs can close or open each relay.
-
-Doc build instructions
-----------------------
-
-Using python3, do:
-
-.. code-block:: console
-
-   $ pip3 install -U sphinx sphinx-rtd-theme sphinx-prompt
-
-
-Then rebuild with:
-
-.. code-block:: console
-
-   $ cd doc
-   $ make html
-
-The build output is located in ``doc/build/html/``. Open it with:
-
-.. code-block:: console
-
-   $ xdg-open doc/build/html/index.html
-
-
-Tips and tricks
----------------
-
-To find a reference to another section, use:
-
-.. code-block:: console
-
-   $ python -m sphinx.ext.intersphinx doc/build/html/objects.inv
