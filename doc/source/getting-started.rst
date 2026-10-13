@@ -207,12 +207,24 @@ The contents of ``copilot.sh`` could be as following:
 
    esac
 
-Connect to a UART
------------------
+Connect to an UART
+------------------
 
-Connect to the Copilot UART using the left-most header at the bottom of
-the PCB (J4). The pins are documented on the bottom of the PCB. The voltage can
-be selected on the next header.
+Copilot provides a FTDI-compliant UART where the pins are in the same order than
+a FTDI USB-to-TTL cable. The pins are documented on the bottom of the PCB.
+
+* The UART pins are located on the ``J7`` connector.
+* The UART signals voltage can be selected from the ``J12`` pin header to match
+  the DUT board voltage.
+* The ``J6`` pin header allows to apply power to the +5V pin on the UART FTDI-like
+  pin header. This can turn useful for some DUT that can be powered directly by
+  a FTDI cable. **Note that this voltage is always +5V.**
+* The ``J11`` pin header allows to keep the Copilot UART signals always enabled
+  (even when the DUT board is powered off), or to switch the Copilot UART signals
+  to high impedance when the DUT board is powered off. The latter behavior is
+  useful when the DUT board is susceptible to be reverse-powered by the UART.
+  You can also completely remove the ``J11`` jumper to fully turn the UART
+  signals off (all UART signals will always stay at high impedance).
 
 To use the connected UART in Linux you can use your favorite terminal program
 with the device ``/dev/copilot/by-id/${ID_USB_SERIAL_SHORT}/tty``, in this
